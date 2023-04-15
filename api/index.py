@@ -6,6 +6,7 @@ app = Flask(__name__)
 TOKEN = "5650199850:AAFVpNnH9pLBXQkomn-nJZlBnNucjP4s3sQ"
 update=telegram.Update
 updater = Updater(TOKEN, use_context=True)
+bot=telegram.Bot(TOKEN)
 
 app = Flask(__name__)
 
@@ -14,14 +15,14 @@ def home():
    return 'Hello, World!'
 
 app.route('/test')
-def test(update, context):
+def test():
     chat_id="@1093497662"# msg.sender_chat["username"]
-    context.bot.sendMessage(chat_id=chat_id, text="test")
+    bot.sendMessage(chat_id=chat_id, text="test")
     
 
 
 @app.route("/hook", methods=['POST'])
-def index(update, context):
+def index():
    
     if request.method == "POST":
         content = json.loads(request.get_data())# #WORKING
@@ -29,6 +30,6 @@ def index(update, context):
         #chat_id = request.json["message"]["chat"]["id"]
         chat_id="@1093497662"# msg.sender_chat["username"]
   
-        context.bot.sendMessage(chat_id=chat_id, text=str(content))
+        bot.sendMessage(chat_id=chat_id, text=str(content))
 
     return 'ok'
