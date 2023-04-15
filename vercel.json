@@ -8,7 +8,15 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/",
+            "dest": "/"
+        }
+        {
+            "src": "/test",
+            "dest": "/"
+        }
+{
+            "src": "/hook",
             "dest": "/"
         }
     ]
