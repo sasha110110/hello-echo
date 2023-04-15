@@ -7,7 +7,6 @@ TOKEN = "5650199850:AAFVpNnH9pLBXQkomn-nJZlBnNucjP4s3sQ"
 update=telegram.Update
 updater = Updater(TOKEN, use_context=True)
 
-5650199850:AAFVpNnH9pLBXQkomn-nJZlBnNucjP4s3sQ
 app = Flask(__name__)
 
 @app.route('/')
