@@ -16,20 +16,18 @@ def home():
 
 app.route('/test')
 def test():
-    chat_id="@1093497662"# msg.sender_chat["username"]
-    bot.sendMessage(chat_id=chat_id, text="test")
+   chat_id="@1093497662"# msg.sender_chat["username"]
+   bot.sendMessage(chat_id=chat_id, text="test")
+   return "Done"
     
 
 
-@app.route("/hook", methods=['POST'])
+@app.route("/hook", methods=['POST', "GET"])
 def hook():
-   
-    if request.method == "POST":
-        content = json.loads(request.get_data())# #WORKING
+   if request.method == "POST":
+       content = json.loads(request.get_data())# #WORKING
        
         #chat_id = request.json["message"]["chat"]["id"]
-        chat_id="@1093497662"# msg.sender_chat["username"]
-  
-        bot.sendMessage(chat_id=chat_id, text=str(content))
-
-    return 'ok'
+       chat_id="@1093497662"# msg.sender_chat["username"]
+       bot.sendMessage(chat_id=chat_id, text=str(content))
+       return 'ok'
