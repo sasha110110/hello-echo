@@ -8,7 +8,6 @@ update=telegram.Update
 updater = Updater(TOKEN, use_context=True)
 bot=telegram.Bot(TOKEN)
 
-app = Flask(__name__)
 
 @app.route('/')
 def home():
