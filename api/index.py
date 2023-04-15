@@ -11,9 +11,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
- #   return 'Hello, World!'
+   return 'Hello, World!'
 
-@app.route('/test')
+app.route('/test')
 def test(update, context):
     chat_id="@1093497662"# msg.sender_chat["username"]
     context.bot.sendMessage(chat_id=chat_id, text="test")
