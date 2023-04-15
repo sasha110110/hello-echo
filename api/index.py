@@ -20,7 +20,7 @@ def test(update, context):
     
 
 
-@app.route("/5650199850:AAFVpNnH9pLBXQkomn-nJZlBnNucjP4s3sQ", methods=['POST'])
+@app.route("/hook", methods=['POST'])
 def index(update, context):
    
     if request.method == "POST":
